@@ -1,6 +1,7 @@
 package booking.model;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
 
@@ -9,5 +10,8 @@ import java.io.Serializable;
 public class StandardOccupancy implements Serializable {
 
     private static final long serialVersionUID = 6L;
+
+    @OneToMany
+    private RoomType roomType;
 
 }
