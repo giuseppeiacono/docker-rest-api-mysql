@@ -5,6 +5,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "trivago_booking")
@@ -17,4 +18,57 @@ public class TrivagoBooking implements Serializable {
 
     @ManyToOne
     private Customer customer;
+
+    private LocalDate checkIn;
+
+    private LocalDate checkOut;
+
+    public TrivagoBooking(BookedRoom bookedRoom, Customer customer, LocalDate checkIn, LocalDate checkOut) {
+        this.bookedRoom = bookedRoom;
+        this.customer = customer;
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+    }
+
+    public BookedRoom getBookedRoom() {
+        return bookedRoom;
+    }
+
+    public void setBookedRoom(BookedRoom bookedRoom) {
+        this.bookedRoom = bookedRoom;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public LocalDate getCheckIn() {
+        return checkIn;
+    }
+
+    public void setCheckIn(LocalDate checkIn) {
+        this.checkIn = checkIn;
+    }
+
+    public LocalDate getCheckOut() {
+        return checkOut;
+    }
+
+    public void setCheckOut(LocalDate checkOut) {
+        this.checkOut = checkOut;
+    }
+
+    @Override
+    public String toString() {
+        return "TrivagoBooking{" +
+                "bookedRoom=" + bookedRoom +
+                ", customer=" + customer +
+                ", checkIn=" + checkIn +
+                ", checkOut=" + checkOut +
+                '}';
+    }
 }

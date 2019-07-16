@@ -20,4 +20,59 @@ public class RoomType implements Serializable {
 
     @ManyToOne
     private StandardOccupancy standardOccupancy;
+
+    private HotelRoomType hotelRoomType;
+
+    public RoomType(Room room, BookedRoom bookedRoom, StandardOccupancy standardOccupancy, HotelRoomType hotelRoomType) {
+        this.room = room;
+        this.bookedRoom = bookedRoom;
+        this.standardOccupancy = standardOccupancy;
+        this.hotelRoomType = hotelRoomType;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public BookedRoom getBookedRoom() {
+        return bookedRoom;
+    }
+
+    public void setBookedRoom(BookedRoom bookedRoom) {
+        this.bookedRoom = bookedRoom;
+    }
+
+    public StandardOccupancy getStandardOccupancy() {
+        return standardOccupancy;
+    }
+
+    public void setStandardOccupancy(StandardOccupancy standardOccupancy) {
+        this.standardOccupancy = standardOccupancy;
+    }
+
+    public HotelRoomType getHotelRoomType() {
+        return hotelRoomType;
+    }
+
+    public void setHotelRoomType(HotelRoomType hotelRoomType) {
+        this.hotelRoomType = hotelRoomType;
+    }
+
+    @Override
+    public String toString() {
+        return "RoomType{" +
+                "room=" + room +
+                ", bookedRoom=" + bookedRoom +
+                ", standardOccupancy=" + standardOccupancy +
+                ", hotelRoomType=" + hotelRoomType +
+                '}';
+    }
+
+    public enum HotelRoomType {
+        SINGLE, DOUBLE, SUITE;
+    }
 }

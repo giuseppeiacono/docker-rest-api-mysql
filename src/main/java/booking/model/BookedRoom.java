@@ -17,4 +17,32 @@ public class BookedRoom implements Serializable {
     @ManyToOne
     private TrivagoBooking trivagoBooking;
 
+    public BookedRoom(RoomType roomType, TrivagoBooking trivagoBooking) {
+        this.roomType = roomType;
+        this.trivagoBooking = trivagoBooking;
+    }
+
+    public RoomType getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
+    }
+
+    public TrivagoBooking getTrivagoBooking() {
+        return trivagoBooking;
+    }
+
+    public void setTrivagoBooking(TrivagoBooking trivagoBooking) {
+        this.trivagoBooking = trivagoBooking;
+    }
+
+    @Override
+    public String toString() {
+        return "BookedRoom{" +
+                "roomType=" + roomType +
+                ", trivagoBooking=" + trivagoBooking +
+                '}';
+    }
 }
