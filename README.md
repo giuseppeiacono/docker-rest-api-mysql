@@ -1,2 +1,18 @@
-# docker-rest-api-mysql
-Dockerized Java Rest API with Mysql database
+# Trivago challenge
+Dockerized Java Rest API with Mysql database implemented by Giuseppe Iacono.
+
+## Run application
+As required, this application should work only with commands docker build and docker run.
+
+First of all, excute the command below to run a container where the public image provided by MySQL will be
+automatically downloaded if it doesn’t already have it installed:
+```
+sudo docker run --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=test" mysql
+```
+
+Then run trivago-challenge application linked to docker-mysql container:
+```
+sudo docker run --link docker-mysql:mysql -p 8080:8080 -t springio/trivago-challenge
+```
+
+
