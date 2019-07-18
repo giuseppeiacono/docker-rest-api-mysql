@@ -1,9 +1,6 @@
 package booking.model;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -12,6 +9,10 @@ import java.time.LocalDate;
 public class TrivagoBooking implements Serializable {
 
     private static final long serialVersionUID = 5L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     @OneToMany
     private BookedRoom bookedRoom;

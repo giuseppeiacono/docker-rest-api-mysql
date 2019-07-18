@@ -1,8 +1,6 @@
 package booking.model;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -10,6 +8,10 @@ import java.io.Serializable;
 public class BookedRoom implements Serializable {
 
     private static final long serialVersionUID = 3L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
     @ManyToOne
     private RoomType roomType;
